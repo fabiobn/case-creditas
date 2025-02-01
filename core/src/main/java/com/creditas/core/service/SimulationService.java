@@ -1,24 +1,20 @@
-package com.creditas.core.usecase.impl;
+package com.creditas.core.service;
 
 import com.creditas.core.domain.Simulation;
 import com.creditas.core.domain.SimulationInput;
-import com.creditas.core.service.SimulationService;
-import com.creditas.core.usecase.SimulateUseCase;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class SimulateUseCaseImpl implements SimulateUseCase {
+public class SimulationService {
 
-    private SimulationService simulationService;
+    private FeeService feeService;
 
-    @Override
     public Simulation simulate(final SimulationInput simulationInput) {
         return null;
     }
 
-    @Override
     public List<Simulation> multipleSimulate(final List<SimulationInput> simulationInputList) {
         return null;
     }

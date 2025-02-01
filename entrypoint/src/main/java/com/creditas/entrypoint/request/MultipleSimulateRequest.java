@@ -4,11 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Builder
 @Data
-public class SimulateRequest {
-    private Double amount;
-    private LocalDate birthDate;
-    private Integer term;
+public class MultipleSimulateRequest {
+    private List<SimulateRequest> simulations;
 }

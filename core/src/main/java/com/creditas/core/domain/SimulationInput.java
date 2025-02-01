@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Builder
 @Data
 public class SimulationInput {
-    private Double valor;
-    private LocalDate dataNascimento;
-    private Integer prazo;
+    private Double amount;
+    private LocalDate birthDate;
+    private Integer term;
 }

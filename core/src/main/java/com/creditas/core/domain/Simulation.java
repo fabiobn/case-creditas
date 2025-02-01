@@ -6,7 +6,7 @@ import lombok.Data;
 @Builder
 @Data
 public class Simulation {
-    private Double valorTotal;
-    private Double valorParcela;
-    private Double taxaJuros;
+    private Double totalAmount;
+    private Double installmentAmount;
+    private Double fee;
 }
