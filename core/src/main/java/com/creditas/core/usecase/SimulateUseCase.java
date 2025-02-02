@@ -6,6 +6,6 @@ import com.creditas.core.domain.SimulationInput;
 import java.util.List;
 
 public interface SimulateUseCase {
-    Simulation simulate(final SimulationInput simulationInput);
+    Simulation simulate(final SimulationInput simulationInput) throws Exception;
     List<Simulation> multipleSimulate(final List<SimulationInput> simulationInputList);
 }

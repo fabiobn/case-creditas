@@ -24,6 +24,7 @@ public class SimulationMapper {
                 .amount(simulateRequest.getAmount())
                 .birthDate(simulateRequest.getBirthDate())
                 .term(simulateRequest.getTerm())
+                .feeType(simulateRequest.getFeeType())
                 .build();
     }
 
@@ -45,7 +46,7 @@ public class SimulationMapper {
         return SimulateResponse.builder()
                 .totalAmount(String.format("R$ %.2f", simulation.getTotalAmount()))
                 .installmentAmount(String.format("R$ %.2f", simulation.getInstallmentAmount()))
-                .fee(String.format("%.2f %%", simulation.getFee()))
+                .totalFee(String.format("%.2f %%", simulation.getTotalFee()))
                 .build();
     }
 

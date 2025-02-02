@@ -8,5 +8,5 @@ import lombok.Data;
 public class Simulation {
     private Double totalAmount;
     private Double installmentAmount;
-    private Double fee;
+    private Double totalFee;
 }

@@ -23,4 +23,16 @@ public class FeeService {
 
         return feeStrategy.calculateFee(age);
     }
+
+    /**
+     * Obter a taxa de juros mensal de acordo com a idade do cliente.
+     * @param age Idade do cliente para o cálculo.
+     * @return Retorna a taxa de juros mensal.
+     */
+    public Double getMonthFee(FeeType feeType, Integer age) throws Exception {
+
+        final Double anualFee = getAnnualFee(feeType, age);
+
+        return anualFee/12;
+    }
 }

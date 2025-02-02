@@ -6,5 +6,5 @@ import lombok.Builder;
 public class SimulateResponse {
     private String totalAmount;
     private String installmentAmount;
-    private String fee;
+    private String totalFee;
 }

@@ -1,7 +1,9 @@
 package com.creditas.entrypoint.controller;
 
+import com.creditas.core.domain.MessageInput;
 import com.creditas.core.domain.Simulation;
 import com.creditas.core.domain.SimulationInput;
+import com.creditas.core.service.MessageSenderService;
 import com.creditas.core.usecase.SimulateUseCase;
 import com.creditas.entrypoint.mapper.SimulationMapper;
 import com.creditas.entrypoint.request.MultipleSimulateRequest;
@@ -21,7 +23,8 @@ public class SimulationController {
     private SimulateUseCase simulateUseCase;
 
     @PostMapping
-    public ResponseEntity<ResponseApi<SimulateResponse>> simulate(@RequestBody SimulateRequest simulateRequest) {
+    public ResponseEntity<ResponseApi<SimulateResponse>> simulate(
+            @RequestBody SimulateRequest simulateRequest) throws Exception {
 
         // Mapeia para objeto de domínio
         final SimulationInput simulationInput = SimulationMapper.from(simulateRequest);

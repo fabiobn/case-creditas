@@ -24,8 +24,8 @@ public class FeeStrategyFactory {
 
     /**
      * Encontrar a strategy de acordo com o tipo passado por parâmetro.
-     * @param feeType
-     * @return
+     * @param feeType Tipo de juros.
+     * @return A strategy de acordo com o tipo para o cálculo do juros.
      * @throws Exception
      */
     public FeeStrategy find(FeeType feeType) throws Exception {

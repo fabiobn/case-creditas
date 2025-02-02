@@ -1,4 +1,4 @@
-package com.creditas.entrypoint.request;
+package com.creditas.message.domain;
 
 import com.creditas.core.enums.FeeType;
 import lombok.Builder;
@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Builder
 @Data
-public class SimulateRequest {
+public class MessageSimulation {
     private Double amount;
     private LocalDate birthDate;
     private Integer term;
