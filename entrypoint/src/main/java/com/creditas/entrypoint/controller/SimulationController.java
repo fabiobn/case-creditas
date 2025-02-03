@@ -1,9 +1,7 @@
 package com.creditas.entrypoint.controller;
 
-import com.creditas.core.domain.MessageInput;
 import com.creditas.core.domain.Simulation;
 import com.creditas.core.domain.SimulationInput;
-import com.creditas.core.service.MessageSenderService;
 import com.creditas.core.usecase.SimulateUseCase;
 import com.creditas.entrypoint.mapper.SimulationMapper;
 import com.creditas.entrypoint.request.MultipleSimulateRequest;
@@ -39,19 +37,16 @@ public class SimulationController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseApi<List<SimulateResponse>>> multipleSimulate(
+    public ResponseEntity<ResponseApi<String>> multipleSimulate(
             @RequestBody MultipleSimulateRequest multipleSimulateRequest) {
 
         // Mapeia para lista de objeto de domínio
         final List<SimulationInput> multipleSimulationInput = SimulationMapper.from(multipleSimulateRequest);
 
-        // Processa múltiplas simulações
-        final List<Simulation> simulationList = simulateUseCase.multipleSimulate(multipleSimulationInput);
+        // Processa múltiplas simulações de forma assíncrona
+        simulateUseCase.multipleSimulate(multipleSimulationInput);
 
-        // Converte para resposta do endpoint
-        final List<SimulateResponse> simulateResponseList = SimulationMapper.from(simulationList);
-
-        return ResponseEntity.ok(buildResponseApi(simulateResponseList));
+        return ResponseEntity.ok(buildResponseApi("Simulações enviadas para processamento assíncrono"));
     }
 
     /**

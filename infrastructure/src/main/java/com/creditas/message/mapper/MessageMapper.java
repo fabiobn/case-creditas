@@ -15,4 +15,13 @@ public class MessageMapper {
                 .feeType(simulationInput.getFeeType())
                 .build();
     }
+
+    public static SimulationInput from(final MessageSimulation messageSimulation) {
+        return SimulationInput.builder()
+                .term(messageSimulation.getTerm())
+                .amount(messageSimulation.getAmount())
+                .birthDate(messageSimulation.getBirthDate())
+                .feeType(messageSimulation.getFeeType())
+                .build();
+    }
 }

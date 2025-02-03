@@ -42,16 +42,18 @@ public class SimulateUseCaseImpl implements SimulateUseCase {
                     .subject("Simulação")
                     .message(message)
                     .build();
+
             emailService.send(emailInput);
 
             return simulation;
         } catch (Exception ex) {
+            //TODO: Realizar organização de mensagens de erro para ser tratada pelo controller advice
             throw new Exception("Erro ao realizar a simulação de empréstimo.", ex);
         }
     }
 
     @Override
-    public List<Simulation> multipleSimulate(final List<SimulationInput> simulationInputList) {
+    public void multipleSimulate(final List<SimulationInput> simulationInputList) {
 
         // Para cada entrada de simulação
         simulationInputList.forEach(simulationInput -> {
@@ -62,6 +64,5 @@ public class SimulateUseCaseImpl implements SimulateUseCase {
             // Enviar para processamento assíncrono
             messageSenderService.sendMessage(messageInput);
         });
-        return null;
     }
 }
