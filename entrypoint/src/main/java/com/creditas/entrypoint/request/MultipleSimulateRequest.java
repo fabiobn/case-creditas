@@ -3,7 +3,6 @@ package com.creditas.entrypoint.request;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Builder

@@ -36,7 +36,7 @@ public class SimulationController {
         return ResponseEntity.ok(buildResponseApi(simulateResponse));
     }
 
-    @PostMapping
+    @PostMapping("/multiple")
     public ResponseEntity<ResponseApi<String>> multipleSimulate(
             @RequestBody MultipleSimulateRequest multipleSimulateRequest) {
 

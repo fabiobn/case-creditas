@@ -12,7 +12,9 @@ public class RestExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ResponseApi<?>> exceptionHandler(final Exception ex) {
-        ResponseError apiError = ResponseError.builder().build();
+        ResponseError apiError = ResponseError.builder()
+                .message(String.format("Erro interno: %s", ex.getMessage()))
+                .build();
 
         return buildResponseError(HttpStatus.INTERNAL_SERVER_ERROR, apiError);
     }

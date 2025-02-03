@@ -4,4 +4,5 @@ import lombok.Builder;
 
 @Builder
 public class ResponseError {
+    private String message;
 }
